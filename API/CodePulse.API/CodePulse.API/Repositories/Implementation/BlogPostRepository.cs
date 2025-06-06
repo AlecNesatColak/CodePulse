@@ -21,7 +21,7 @@ namespace CodePulse.API.Repositories.Implementation
             return blogPost;
         }
 
-        public async Task<BlogPost> DeleteAsync(Guid id)
+        public async Task<BlogPost?> DeleteAsync(Guid id)
         {
             var existingBlogPost = await _dbContext.BlogPosts.Include(x => x.Categories).FirstOrDefaultAsync(b => b.Id == id);
 
@@ -52,7 +52,19 @@ namespace CodePulse.API.Repositories.Implementation
             return existingBlog;
         }
 
-        public async Task<BlogPost> UpdateAsync(BlogPost blogPost)
+        public async Task<BlogPost?> GetByUrlHandleAsync(string urlHandle)
+        {
+            var existingUrlHandle = await _dbContext.BlogPosts.Include(bp => bp.Categories).FirstOrDefaultAsync(u => u.UrlHandle == urlHandle);
+
+            if (existingUrlHandle == null)
+            {
+                return null;
+            }
+
+            return existingUrlHandle;
+        }
+
+        public async Task<BlogPost?> UpdateAsync(BlogPost blogPost)
         {
             var existingBlogPost = await _dbContext.BlogPosts
                 .Include(x => x.Categories)

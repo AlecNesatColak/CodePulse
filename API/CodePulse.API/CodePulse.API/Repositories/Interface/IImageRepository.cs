@@ -6,5 +6,7 @@ namespace CodePulse.API.Repositories.Interface
     {
         Task<BlogImage> Upload(IFormFile file, BlogImage blogImage);
 
+        Task<IEnumerable<BlogImage>> GellAllImages();
+
     }
 }

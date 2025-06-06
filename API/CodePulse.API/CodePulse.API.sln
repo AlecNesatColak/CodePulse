@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35919.96 d17.13
+VisualStudioVersion = 17.13.35919.96
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePulse.API", "CodePulse.API\CodePulse.API.csproj", "{8DDE7C28-289E-41A9-9922-14E630C8EAA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PasswordHasherTool", "PasswordHasherTool\PasswordHasherTool.csproj", "{88980534-F116-44F0-BF95-DD73124B9BA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8DDE7C28-289E-41A9-9922-14E630C8EAA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DDE7C28-289E-41A9-9922-14E630C8EAA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DDE7C28-289E-41A9-9922-14E630C8EAA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88980534-F116-44F0-BF95-DD73124B9BA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88980534-F116-44F0-BF95-DD73124B9BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88980534-F116-44F0-BF95-DD73124B9BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88980534-F116-44F0-BF95-DD73124B9BA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

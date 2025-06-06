@@ -52,6 +52,35 @@ namespace CodePulse.API.Controllers
             return BadRequest(ModelState);
         }
 
+        // GET ALL
+        [HttpGet]
+        public async Task<IActionResult> GetAllImages()
+        {
+            var allImages = await _imageRepository.GellAllImages();
+
+            if (allImages == null)
+            {
+                return BadRequest();
+            }
+
+            var response = new List<BlogImageDto>();
+
+            foreach (var image in allImages)
+            {
+                response.Add(new BlogImageDto
+                {
+                    Id = image.Id,
+                    Title = image.Title,
+                    DateCreated = image.DateCreated,
+                    FileExtension = image.FileExtension,
+                    FileName = image.FileName,
+                    Url = image.Url
+                });
+            }
+
+            return Ok(response);
+        }
+
         private void ValidateFileUpload(IFormFile file)
         {
             var allowedExtensions = new string[] { ".jpg", ".jpeg", ".png"};
